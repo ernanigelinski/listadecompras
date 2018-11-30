@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  na,e: MyString
+  price: 1.5
+
+two:
+  na,e: MyString
+  price: 1.5
