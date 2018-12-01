@@ -14,7 +14,7 @@
   <tbody>
     <% @items.each do |item| %>
       <tr>
-        <td><%= item.na,e %></td>
+        <td><%= item.name %></td>
         <td><%= item.price %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
