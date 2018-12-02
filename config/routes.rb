@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  root 'homes#index'
+
   resources :shopping_lists
   resources :items
   # The priority is based upon order of creation: first created -> highest priority.
