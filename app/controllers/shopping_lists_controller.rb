@@ -1,10 +1,11 @@
 class ShoppingListsController < ApplicationController
+  before_action :set_items
   before_action :set_shopping_list, only: [:show, :edit, :update, :destroy]
 
   # GET /shopping_lists
   # GET /shopping_lists.json
   def index
-    @shopping_lists = ShoppingList.all
+    @shopping_lists = shopping_list.all
   end
 
   # GET /shopping_lists/1
@@ -24,7 +25,7 @@ class ShoppingListsController < ApplicationController
   # POST /shopping_lists
   # POST /shopping_lists.json
   def create
-    @shopping_list = ShoppingList.new(shopping_list_params)
+    @shopping_list = @item.shopping_lists.new(shopping_list_params)
 
     respond_to do |format|
       if @shopping_list.save
@@ -62,6 +63,10 @@ class ShoppingListsController < ApplicationController
   end
 
   private
+
+  def set_items
+    @item = Item.find(params[:item_id])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_shopping_list
       @shopping_list = ShoppingList.find(params[:id])
